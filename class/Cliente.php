@@ -4,15 +4,12 @@
         public $id;
         public $nome;
         public $cpf;
-	public $telefone;
 
-        function __construct($id, $nome, $cpf, $telefone)
+        function __construct($id, $nome, $cpf)
         {
             $this->id = $id;
             $this->nome = $nome;
             $this->cpf = $cpf;
-	        $this->telefone = $telefone;
         }
     }
 ?>
-

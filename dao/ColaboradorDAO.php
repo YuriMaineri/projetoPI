@@ -1,4 +1,4 @@
-<?
+<?php
 
     class ColaboradorDAO{
 
@@ -7,7 +7,7 @@
 			$pdo = PDOFactory::getConexao();
 			$comando = $pdo->prepare($query);
 			$comando->execute();
-			$colaborador = array();	
+			$colaborador = array();
 			while($row = $comando->fetch(PDO::FETCH_OBJ)) {
 				$colaborador[] = new Colaborador($row->id,$row->nome,$row->login,$row->senha,$row->email);
 			}
@@ -15,7 +15,7 @@
 		}
 
 		public function inserir(Colaborador $colaborador) {
-			$query = "INSERT INTO colaborador(nome, login, senha, email) VALUES (:nome, :login, :senha, :email)";            
+			$query = "INSERT INTO colaborador(nome, login, senha, email) VALUES (:nome, :login, :senha, :email)";
 			$pdo = PDOFactory::getConexao();
 			$comando = $pdo->prepare($query);
 			$comando->bindParam(":nome", $colaborador->nome);
@@ -28,5 +28,5 @@
 		}
 
 	}
-	
+
 ?>

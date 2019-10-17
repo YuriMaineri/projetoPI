@@ -1,4 +1,4 @@
-<?
+<?php
 
     class ClienteController {
 
@@ -15,13 +15,13 @@
             $dao = new ProdutoDAO();
             $produto = $dao->buscarPorId($id);
             $response = $response->withJson($produto);
-            $response = $response->withHeader('Content-type', 'application/json');    
+            $response = $response->withHeader('Content-type', 'application/json');
             return $response;
         }
 
         public function inserir($request, $response, $args) {
             $var = $request->getParsedBody();
-            $cliente = new Cliente(0,$var['nome'],$var['preco']);
+            $cliente = new Cliente(0,$var['nome'],$var['cpf']);
             $dao = new ClienteDAO();
             $cliente = $dao->inserir($cliente);
             $response = $response->withJson($cliente);
