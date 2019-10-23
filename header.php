@@ -14,8 +14,10 @@ require_once "class/Produto.php";
 require_once "dao/ClienteDAO.php";
 require_once "dao/ColaboradorDAO.php";
 require_once "dao/ProdutoDAO.php";
+require_once "dao/RelatorioDAO.php";
 
 //Controllers
 require_once "controllers/ClienteController.php";
 require_once "controllers/ColaboradorController.php";
+require_once 'controllers/RelatorioController.php';
 //require_once "controllers/";
