@@ -16,10 +16,10 @@
 	$app->group("/clientes",
 		function() {
 			$this->get("", "ClienteController:listar");
-		//	$this->get("/{id:[0-9]+}", "ProdutoController:buscarPorId");
 			$this->post("", "ClienteController:inserir");
-		//	$this->put("/{id:[0-9]+}", "ProdutoController:atualizar");
-		//	$this->delete("/{id:[0-9]+}", "ProdutoController:deletar");
+			$this->put("/{id:[0-9]+}", "ClienteController:atualizar");
+			$this->delete("/{id:[0-9]+}", "ClienteController:deletar");
+			$this->get("/{id:[0-9]+}", "ClienteController:buscarPorId");
 		}
 	);
 
@@ -27,12 +27,21 @@
 		function() {
 			$this->get("", "ColaboradorController:listar");
 			$this->post("", "ColaboradorController:inserir");
+			$this->put("/{id:[0-9]+}", "ColaboradorController:atualizar");
+			$this->delete("/{id:[0-9]+}", "ColaboradorController:deletar");
+			$this->get("/{id:[0-9]+}", "ColaboradorController:buscarPorId");
 		}
 	);
 
 	$app->group("/produtos",
 		function() {
 			$this->get("", "ProdutoController:listar");
+		}
+	);
+
+	$app->group("/relatorios",
+		function() {
+			$this->get("", "RelatorioController:gerarRelatorio");
 		}
 	);
 
